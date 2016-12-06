@@ -1,0 +1,57 @@
+﻿@model IEnumerable<BillingApp.InvoiceItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.free)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Inventory.batchNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Invoice.id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.free)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Inventory.batchNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Invoice.id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

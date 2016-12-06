@@ -1,0 +1,58 @@
+﻿@model BillingApp.InvoiceItem
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>InvoiceItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.free)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.free)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Inventory.batchNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inventory.batchNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice.id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Invoice.id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

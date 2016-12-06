@@ -1,0 +1,64 @@
+﻿@model BillingApp.InvoiceItem
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>InvoiceItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.free)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.free)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Inventory.batchNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inventory.batchNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Invoice.id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Invoice.id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
